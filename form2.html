@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skeleton Page</title>
+  </head>
+  <body>
+    <h1>Welcome to the Skeleton Page</h1>
+    <form id="signupForm">
+      <input type="email" id="email" placeholder="Enter your email" required/>
+      <button type="submit">Subscribe</button>
+  </body>
+
+  <script>
+    const form = document.getElementById("signupForm")
+    const email = document.getElementById("email")
+    console.log("✅ Form element found:", form)
+    console.log("🔍 Email input element found:", email)
+    
+    // we execute a function when the form is submitted
+    form.addEventListener("submit", function (event) {
+      event.preventDefault() // stops form from submitting
+
+      // Simple validation
+      if (!email.value.endsWith(".au")) {
+        event.preventDefault() // stops form from submitting
+        console.error("❌ Invalid email address")
+        alert("❌ Please enter a valid email address.")
+      } else {
+        // just let it submit
+        console.log("✅ Thank you for subscribing!")
+        alert("✅ Thank you for subscribing!")
+        // Redirect to a thank you page
+        window.location.href = "thankyou.html"
+      }
+    })
+  </script>
+</html>
