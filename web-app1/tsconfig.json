@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve", // or "react-jsx" for React 17+
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "allowJs": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "skipLibCheck": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "global.d.ts"]
+}
