@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Counter (React)</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    "
+  >
+    <div id="root" style="text-align: center; padding: 50px"></div>
+
+    <script type="text/babel">
+      function Counter() {
+        // we see that this component contains css styles as well
+        // note that Count itself does not have arguments
+        const [count, setCount] = React.useState(0) // useState- this is react hook
+        // This is the guy that makes our component dynamic. 
+        // the function itself has a state, which is count.
+        // Directly returning a JSX nothing inside.
+        return (
+          <div
+            style={{
+              border: "2px solid #4CAF50",
+              padding: "20px",
+              borderRadius: "10px",
+              display: "inline-block",
+            }}
+          >
+            {/* The contents of our div, after giving styling */}
+            <h1 style={{ color: "#4CAF50" }}>Clicked {count} times</h1>
+            {/* our counter button */}
+            <button
+              onClick={() => setCount(count + 1)}
+              // On click is an attribute, gives a command on click
+              // So on a click, we set the count to count + 1
+              style={{
+                padding: "10px 20px",
+                fontSize: "16px",
+                backgroundColor: "#4CAF50",
+                color: "white",
+                border: "none",
+                borderRadius: "10px",
+                cursor: "pointer",
+              }}
+            >
+              Click Me
+            </button>
+          </div>
+        );
+        // returned everything
+      }
+      // end of funtion
+      // so we see that we have placed this component inside a div with id root
+      // writing the function itself doenst place anything on the page
+      // we need to render it using ReactDOM.createRoot
+      // Create a root, which takes the div with id root- that is an element.
+      // ReactDOM creates a root from an element.
+      // Take that root and render the Counter component inside it.
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<Counter />);
+    </script>
+
+    <div id="skeleton" style="text-align: center; padding: 50px"></div>
+    <script type="text/babel">
+      function SkeletonComponent() {
+        return (
+          <div
+            style={{
+              border: "2px solid #555",
+              padding: "20px",
+              borderRadius: "10px",
+              display: "inline-block",
+            }}
+          >
+            <h1 style={{ color: "#555" }}>Skeleton Component</h1>
+            <p style={{ fontSize: "18px", color: "#777" }}>
+              This is a basic React component structure.
+            </p>
+          </div>
+        );
+      }
+
+      const skeleton = ReactDOM.createRoot(document.getElementById("skeleton"));
+      skeleton.render(<SkeletonComponent />);
+    </script>
+
+    <div id="poop" style="text-align: center; padding: 50px"></div>
+      <script type="text/babel">
+        function PoopComponent() {
+          return (
+            <div
+              style={{
+                border: "2px solid #8B4513",
+                padding: "20px",
+                borderRadius: "10px",
+                display: "inline-block",
+              }}
+            >
+              <h1 style={{ color: "#8B4513" }}>Poop Component</h1>
+              <p style={{ fontSize: "18px", color: "#A0522D" }}>
+                This is a poop component.
+              </p>
+            </div>
+          );
+        }
+        const poop = ReactDOM.createRoot(document.getElementById("poop"));
+        poop.render(<PoopComponent />);
+      </script>
+    </div>
+  </body>
+</html>

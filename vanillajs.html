@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Counter (Vanilla JS)</title>
+  </head>
+  <body>
+    <h1 id="count">Clicked 0 times</h1>
+    <button id="btn">Click Me</button>
+
+    <script>
+      let count = 0;
+      const countEl = document.getElementById("count");
+      const btn = document.getElementById("btn"); // got the button element
+
+      // so we saw that we retrived the btn element. Now we can keep track of events surrounding this button
+      btn.addEventListener("click", () => {
+        count++;
+        countEl.textContent = `Clicked ${count} times`;
+      });
+    </script>
+  </body>
+</html>
